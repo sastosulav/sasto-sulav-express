@@ -1,3 +1,4 @@
+// SEO configuration for Sasto Sulav Express
 export const seo = ({
   title,
   description,
@@ -13,7 +14,7 @@ export const seo = ({
 }) => {
   const defaultImage = '/logo.png'
   const defaultDescription =
-    'a one-stop-shop for all your South Asian grocery needs.'
+    'Your premier destination for authentic South Asian groceries in Japan. We bring the flavors of Nepal and South Asia directly to your doorstep.'
   const defaultTitle = 'Sasto Sulav Express'
   const defaultKeywords =
     'Sasto Sulav Express, South Asian groceries, Nepal, Japan'
