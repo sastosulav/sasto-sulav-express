@@ -4,7 +4,6 @@ import { AspectRatio } from '../ui/aspect-ratio'
 import { Badge } from '../ui/badge'
 import { Card, CardContent, CardHeader } from '../ui/card'
 import { Image } from '../ui/image'
-import { Progress } from '../ui/progress'
 import { Rating, RatingButton } from '../ui/rating'
 
 export const WeekendDiscountedItems = () => {
@@ -67,7 +66,7 @@ export const WeekendDiscountedItems = () => {
               <AspectRatio ratio={4 / 3}>
                 <Image
                   alt={item.name}
-                  src={item.image || '/placeholder.svg'}
+                  src={item.image}
                   className="object-contain"
                 />
               </AspectRatio>
@@ -114,7 +113,7 @@ export const WeekendDiscountedItems = () => {
                   {item.ratingCount}
                 </p>
               </div>
-              <div className="pt-2">
+              {/* <div className="pt-2">
                 <Progress
                   value={
                     item?.availableItem && item?.totalItems
@@ -132,7 +131,7 @@ export const WeekendDiscountedItems = () => {
                     {item.availableItem}
                   </span>
                 </p>
-              </div>
+              </div> */}
             </CardContent>
             {/* <AddToCartButton variant="destructive" /> */}
           </Card>

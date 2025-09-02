@@ -25,10 +25,10 @@ export const HomeBanner = () => {
           >
             <div className="lg:space-y-6 space-y-2.5">
               <section className="flex items-center gap-3">
-                <p className="uppercase font-dosis font-medium lg:text-sm text-xs">
+                <p className="uppercase text-white bg-tertiary px-1 py-0.5 font-dosis font-medium lg:text-sm text-xs">
                   Exclusive Offer
                 </p>
-                <Badge className="text-[#038E42] bg-gradient-to-r from-green-500/20 rounded-full lg:px-4 px-3 lg:py-2 py-1 text-sm font-dosis font-medium to-transparent">
+                <Badge className="text-white bg-gradient-to-r from-tertiary/50 rounded-full lg:px-4 px-3 lg:py-2 py-1 text-sm font-dosis font-medium to-transparent">
                   -20% OFF
                 </Badge>
               </section>
@@ -45,7 +45,7 @@ export const HomeBanner = () => {
                 <p className="text-xs text-zinc-700 font-medium">
                   from{' '}
                   <span className="text-destructive font-dosis font-bold lg:text-4xl text-[30px]">
-                    ¥7.99
+                    ¥7990
                   </span>
                 </p>
               </section>
@@ -57,7 +57,7 @@ export const HomeBanner = () => {
           <Image
             alt="banner1"
             className="object-cover"
-            src="https://images.unsplash.com/photo-1586788224331-947f68671cf1?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+            src="https://images.unsplash.com/photo-1603380381196-148729a0c8e4?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
           />
         </AspectRatio>
       </motion.section>
@@ -98,7 +98,7 @@ export const HomeBanner = () => {
                 <p className="text-xs text-gray-200 font-medium">
                   from{' '}
                   <span className="text-destructive font-bold font-dosis lg:text-4xl text-[30px]">
-                    ¥6.25
+                    ¥6250
                   </span>
                 </p>
               </section>

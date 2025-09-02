@@ -2,7 +2,6 @@ import { DashainOffer } from '@/components/dashain-offer'
 import { CategoriesCarousel } from '@/components/home/categories-carousel'
 import { Categoryitems } from '@/components/home/category-items'
 import { HomeBanner } from '@/components/home/home-banner'
-import { WeekendDiscountBannersOne } from '@/components/home/weekend-discount-banners-one'
 import { WeekendDiscountBannersTwo } from '@/components/home/weekend-discount-banners-two'
 import { WeekendDiscountedItems } from '@/components/home/weekend-discounted-items'
 import { Container } from '@/components/ui/container'
@@ -28,7 +27,7 @@ function App() {
         <CategoriesCarousel />
         {/* <ShopOfferTimer /> */}
         <WeekendDiscountedItems />
-        <WeekendDiscountBannersOne />
+        {/* <WeekendDiscountBannersOne /> */}
         <Categoryitems
           categories={FRUITS_CATEGORIES}
           href="https://tetoteto.co.jp/category/vegetables-and-fruits-np"

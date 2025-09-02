@@ -62,7 +62,7 @@ export const Header = () => {
         </section>
         <div className="flex items-center gap-3">
           <a
-            href="https://nepalicuisine.com"
+            href={process.env.NEPALI_DINING_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm font-semibold font-dosis relative h-8 rounded-md border-2 border-dashed overflow-hidden gap-x-3 flex items-center border-black group"
