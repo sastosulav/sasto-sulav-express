@@ -1,32 +1,36 @@
-import { AmericanExpressIcon } from "@/components/icons/american-express";
-import { MasterCardIcon } from "@/components/icons/master-card";
-import { PaypalIcon } from "@/components/icons/paypal";
-import { StripeIcon } from "@/components/icons/stripe";
-import { VisaIcon } from "@/components/icons/visa-icon";
-import { Link } from "@tanstack/react-router";
+import { AmericanExpressIcon } from '@/components/icons/american-express'
+import { MasterCardIcon } from '@/components/icons/master-card'
+import { PaypalIcon } from '@/components/icons/paypal'
+import { StripeIcon } from '@/components/icons/stripe'
+import { VisaIcon } from '@/components/icons/visa-icon'
+import { Link } from '@tanstack/react-router'
 
 const links = [
   {
-    label: "Privacy Policy",
-    href: "/privacy-policy",
+    label: 'Privacy Policy',
+    href: '/privacy-policy',
   },
   {
-    label: "Terms & Conditions",
-    href: "/terms-condition",
+    label: 'Terms & Conditions',
+    href: '/terms-condition',
+  },
+  {
+    label: 'Legal Info',
+    href: '/legal-info',
   },
   // {
   //   label: "Cookie",
   //   href: "/cookie",
   // },
-];
+]
 
 const paymentIcons = [
-  { key: "american-express", icon: <AmericanExpressIcon className="size-6" /> },
-  { key: "visa", icon: <VisaIcon className="size-6" /> },
-  { key: "master-card", icon: <MasterCardIcon className="size-6" /> },
-  { key: "paypal", icon: <PaypalIcon className="size-6" /> },
-  { key: "stripe", icon: <StripeIcon className="size-6" /> },
-];
+  { key: 'american-express', icon: <AmericanExpressIcon className="size-6" /> },
+  { key: 'visa', icon: <VisaIcon className="size-6" /> },
+  { key: 'master-card', icon: <MasterCardIcon className="size-6" /> },
+  { key: 'paypal', icon: <PaypalIcon className="size-6" /> },
+  { key: 'stripe', icon: <StripeIcon className="size-6" /> },
+]
 
 export const FooterCopyright = () => {
   return (
@@ -58,5 +62,5 @@ export const FooterCopyright = () => {
         </div>
       </section>
     </div>
-  );
-};
+  )
+}

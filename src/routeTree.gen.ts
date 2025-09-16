@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as TermsConditionRouteImport } from './routes/terms-condition'
 import { Route as PrivacyPolicyRouteImport } from './routes/privacy-policy'
+import { Route as LegalInfoRouteImport } from './routes/legal-info'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 
@@ -22,6 +23,11 @@ const TermsConditionRoute = TermsConditionRouteImport.update({
 const PrivacyPolicyRoute = PrivacyPolicyRouteImport.update({
   id: '/privacy-policy',
   path: '/privacy-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LegalInfoRoute = LegalInfoRouteImport.update({
+  id: '/legal-info',
+  path: '/legal-info',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AboutRoute = AboutRouteImport.update({
@@ -38,12 +44,14 @@ const IndexRoute = IndexRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/legal-info': typeof LegalInfoRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-condition': typeof TermsConditionRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/legal-info': typeof LegalInfoRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-condition': typeof TermsConditionRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/legal-info': typeof LegalInfoRoute
   '/privacy-policy': typeof PrivacyPolicyRoute
   '/terms-condition': typeof TermsConditionRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/privacy-policy' | '/terms-condition'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/legal-info'
+    | '/privacy-policy'
+    | '/terms-condition'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/privacy-policy' | '/terms-condition'
-  id: '__root__' | '/' | '/about' | '/privacy-policy' | '/terms-condition'
+  to: '/' | '/about' | '/legal-info' | '/privacy-policy' | '/terms-condition'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/legal-info'
+    | '/privacy-policy'
+    | '/terms-condition'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  LegalInfoRoute: typeof LegalInfoRoute
   PrivacyPolicyRoute: typeof PrivacyPolicyRoute
   TermsConditionRoute: typeof TermsConditionRoute
 }
@@ -83,6 +104,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy-policy'
       fullPath: '/privacy-policy'
       preLoaderRoute: typeof PrivacyPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/legal-info': {
+      id: '/legal-info'
+      path: '/legal-info'
+      fullPath: '/legal-info'
+      preLoaderRoute: typeof LegalInfoRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/about': {
@@ -105,6 +133,7 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  LegalInfoRoute: LegalInfoRoute,
   PrivacyPolicyRoute: PrivacyPolicyRoute,
   TermsConditionRoute: TermsConditionRoute,
 }
