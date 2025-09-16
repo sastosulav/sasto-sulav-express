@@ -1,6 +1,4 @@
-import { TanstackDevtools } from '@tanstack/react-devtools'
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 
 import { DefaultCatchBoundary } from '@/components/default-catch-boundry'
 import { Header } from '@/components/layout/header'
@@ -85,19 +83,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           <ScrollUP />
           <Toaster position="top-center" />
         </LanguageProvider>
-        {process.env.ENV === 'development' ? (
-          <TanstackDevtools
-            config={{
-              position: 'bottom-left',
-            }}
-            plugins={[
-              {
-                name: 'Tanstack Router',
-                render: <TanStackRouterDevtoolsPanel />,
-              },
-            ]}
-          />
-        ) : null}
+       
         <Scripts />
       </body>
     </html>
