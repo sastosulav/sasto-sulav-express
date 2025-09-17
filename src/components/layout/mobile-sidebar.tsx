@@ -90,7 +90,7 @@ export const MobileSidebar = (
               <div className="flex items-center justify-between border-b py-3 px-6 relative overflow-hidden">
                 <Label htmlFor="jp" className="absolute inset-0" />
                 <p className="font-dosis font-semibold text-muted-foreground text-[15px]">
-                  日本語
+                  日本
                 </p>
                 <RadioGroupItem
                   value="jp"

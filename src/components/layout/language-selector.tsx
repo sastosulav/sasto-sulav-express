@@ -20,7 +20,7 @@ export const LanguageSelector = () => {
           EN
         </span>
         <span className="peer-data-[state=checked]:text-background pointer-events-none relative me-0.5 flex min-w-8 items-center justify-center text-center transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] peer-data-[state=checked]:-translate-x-full peer-data-[state=unchecked]:invisible peer-data-[state=checked]:rtl:translate-x-full">
-          日
+          日本
         </span>
       </div>
       <Label htmlFor={'language'} className="sr-only">

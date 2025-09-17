@@ -8,7 +8,7 @@ const items = [
   },
   {
     icon: <Truck />,
-    title: 'Free delivery for order over ¥70',
+    title: 'Free delivery for order over ¥8000',
   },
   {
     icon: <BadgePercent />,
