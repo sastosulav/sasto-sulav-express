@@ -1,44 +1,43 @@
-import { BaggageClaim, Calendar, Sparkles } from "lucide-react";
-import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { Badge } from "./ui/badge";
-import { Button } from "./ui/button";
-import { Image } from "./ui/image";
-import { SlidingNumber } from "./ui/sliding-number";
-import { TextAnimate } from "./ui/text-animate";
+import { BaggageClaim, Calendar, Sparkles } from 'lucide-react'
+import { motion } from 'motion/react'
+import { useEffect, useState } from 'react'
+import { Badge } from './ui/badge'
+import { Button } from './ui/button'
+import { Image } from './ui/image'
+import { TextAnimate } from './ui/text-animate'
 
 export const DashainOffer = () => {
   const [targetDate] = useState(() => {
-    const now = new Date();
-    const year = now.getFullYear();
-    let target = new Date(year, 8, 17, 0, 0, 0, 0);
+    const now = new Date()
+    const year = now.getFullYear()
+    let target = new Date(year, 8, 17, 0, 0, 0, 0)
     if (target < now) {
-      target = new Date(year + 1, 8, 17, 0, 0, 0, 0);
+      target = new Date(year + 1, 8, 17, 0, 0, 0, 0)
     }
-    return target;
-  });
+    return target
+  })
 
-  const [daysLeft, setDaysLeft] = useState(0);
+  const [daysLeft, setDaysLeft] = useState(0)
 
   useEffect(() => {
     const calculateTimeLeft = () => {
-      const now = new Date().getTime();
-      const target = targetDate.getTime();
-      const difference = target - now;
+      const now = new Date().getTime()
+      const target = targetDate.getTime()
+      const difference = target - now
 
       if (difference > 0) {
-        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24))
 
-        setDaysLeft(days);
+        setDaysLeft(days)
       } else {
-        setDaysLeft(0);
+        setDaysLeft(0)
       }
-    };
+    }
 
-    calculateTimeLeft();
-    const interval = setInterval(calculateTimeLeft, 1000);
-    return () => clearInterval(interval);
-  }, [targetDate]);
+    calculateTimeLeft()
+    const interval = setInterval(calculateTimeLeft, 1000)
+    return () => clearInterval(interval)
+  }, [targetDate])
 
   return (
     <div className="relative md:aspect-[16/4] rounded-lg overflow-hidden">
@@ -52,7 +51,7 @@ export const DashainOffer = () => {
           className="space-y-3"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.8, ease: 'easeOut' }}
         >
           <motion.div
             className="flex items-center gap-3"
@@ -68,7 +67,7 @@ export const DashainOffer = () => {
               transition={{
                 duration: 2,
                 repeat: Infinity,
-                repeatType: "reverse",
+                repeatType: 'reverse',
               }}
             >
               <Badge className="bg-red-600 text-white xs:px-4 px-2 xs:py-2 py-1 xs:text-xs text-xs font-semibold">
@@ -77,7 +76,7 @@ export const DashainOffer = () => {
             </motion.div>
             <motion.div
               animate={{ rotate: [0, 360] }}
-              transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+              transition={{ duration: 4, repeat: Infinity, ease: 'linear' }}
             >
               <Calendar className="text-orange-400" size={20} />
             </motion.div>
@@ -92,9 +91,9 @@ export const DashainOffer = () => {
               className="text-white font-bold xs:text-3xl text-xl lg:text-4xl font-dosis"
               animate={{
                 textShadow: [
-                  "0 0 10px rgba(249, 115, 22, 0.5)",
-                  "0 0 20px rgba(249, 115, 22, 0.8)",
-                  "0 0 10px rgba(249, 115, 22, 0.5)",
+                  '0 0 10px rgba(249, 115, 22, 0.5)',
+                  '0 0 20px rgba(249, 115, 22, 0.8)',
+                  '0 0 10px rgba(249, 115, 22, 0.5)',
                 ],
               }}
               transition={{ duration: 2, repeat: Infinity }}
@@ -142,7 +141,7 @@ export const DashainOffer = () => {
           >
             <Button
               className={
-                "bg-orange-600 xs:min-h-9 min-h-7 xs:py-2 py-1 hover:bg-orange-700 text-white rounded-full sm:text-base text-sm"
+                'bg-orange-600 xs:min-h-9 min-h-7 xs:py-2 py-1 hover:bg-orange-700 text-white rounded-full sm:text-base text-sm'
               }
             >
               Shop Now <BaggageClaim className="xs:size-5 size-4" />
@@ -156,7 +155,7 @@ export const DashainOffer = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <motion.div
+          {/* <motion.div
             className="text-orange-300 text-sm font-medium flex items-center gap-2 justify-end"
             animate={{ y: [0, -5, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
@@ -171,16 +170,17 @@ export const DashainOffer = () => {
               />{" "}
               days
             </p>
-          </motion.div>
+          </motion.div> */}
 
           <motion.div
-            className="text-white text-2xl font-bold font-dosis"
+            className="text-white text-2xl relative font-bold font-dosis pr-3"
             animate={{
-              color: ["#ffffff", "#ff9800", "#ff0000", "#ffffff"],
+              color: ['#ffffff', '#ff9800', '#ff0000', '#ffffff'],
             }}
             transition={{ duration: 1.5, repeat: Infinity }}
           >
-            दशैं तिहार
+            दशैं तिहार{' '}
+            <Sparkles size={16} className="absolute top-0 -right-3" />
           </motion.div>
           <motion.div
             className="text-gray-200 text-sm"
@@ -206,5 +206,5 @@ export const DashainOffer = () => {
         />
       </motion.div>
     </div>
-  );
-};
+  )
+}
